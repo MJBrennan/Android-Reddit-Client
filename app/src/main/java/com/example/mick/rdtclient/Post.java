@@ -30,6 +30,8 @@ public class Post {
         return title;
     }
 
+    String getURL()  {       return url;            }
+
     String getScore(){
         return Integer.toString(points);
     }

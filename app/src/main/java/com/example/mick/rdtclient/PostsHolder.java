@@ -7,6 +7,8 @@ package com.example.mick.rdtclient;
         import org.json.JSONArray;
         import org.json.JSONObject;
 
+        import android.content.Context;
+        import android.content.SharedPreferences;
         import android.util.Log;
 
 /**
@@ -26,8 +28,16 @@ public class PostsHolder {
     public  String term2 = "Football";
 
 
+
+
+
     private final String URL_TEMPLATE=
-            "https://www.reddit.com/search.json?q=" + term1  + "+"   +  term2     ;
+            "https://www.reddit.com/search.json?q=TERM1";
+
+
+
+
+
 
     String subreddit;
     String url;
@@ -46,8 +56,9 @@ public class PostsHolder {
      * subreddit name and the 'after' property.
      */
     private void generateURL(){
-        url=URL_TEMPLATE.replace("SUBREDDIT_NAME", subreddit);
+        url=URL_TEMPLATE.replace("TERM1", subreddit);
         url=url.replace("AFTER", after);
+
     }
 
     /**

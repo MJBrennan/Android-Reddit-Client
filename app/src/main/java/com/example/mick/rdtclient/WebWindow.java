@@ -1,6 +1,7 @@
 package com.example.mick.rdtclient;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,6 +26,9 @@ public class WebWindow extends Activity {
         ourBrow.getSettings().setUseWideViewPort(true);
 
 
+        Intent i = getIntent();
+        // getting attached intent data
+        String url = i.getStringExtra("product");
 
 
 
@@ -33,7 +37,7 @@ public class WebWindow extends Activity {
 
 
 
-            ourBrow.loadUrl("http://www.google.com");
+            ourBrow.loadUrl("www.google.com");
         } catch (Exception e){
             e.printStackTrace();
         }
