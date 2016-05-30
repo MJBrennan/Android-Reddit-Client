@@ -13,9 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 /**
  * While this looks like a lot of code, all this class
@@ -33,6 +36,16 @@ public class PostsFragment extends Fragment {
     String subreddit;
     List<Post> posts;
     PostsHolder postsHolder;
+    Spinner spinner;
+
+
+
+
+
+
+
+
+
 
 
     public PostsFragment() {
@@ -55,12 +68,55 @@ public class PostsFragment extends Fragment {
                 , container
                 , false);
         postsList = (ListView) v.findViewById(R.id.posts_list);
+
+         spinner = (Spinner) v.findViewById(R.id.rating_spinner);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                
+                String item = parent.getItemAtPosition(position).toString();
+                Toast.makeText(getActivity() ,  " You hav selected" + item , Toast.LENGTH_LONG).show() ;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+
+
+        // Spinner Drop down elements
+        List<String> categories = new ArrayList<String>();
+        categories.add("Hot");
+        categories.add("Best");
+        categories.add("New");
+        categories.add("Worst");
+
+        // Creating adapter for spinner
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categories);
+
+        // Drop down layout style - list view with radio button
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // attaching data adapter to spinner
+        spinner.setAdapter(dataAdapter);
+
         return v;
     }
+
+
+
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setRetainInstance(true);
     }
 
@@ -127,6 +183,7 @@ public class PostsFragment extends Fragment {
                 postTitle = (TextView) convertView
                         .findViewById(R.id.post_title);
 
+
                 TextView postDetails;
                 postDetails = (TextView) convertView
                         .findViewById(R.id.post_details);
@@ -157,17 +214,11 @@ public class PostsFragment extends Fragment {
                 startActivity(i);
 
 
-
-
-
-
             }
         });
 
-
-
-
     }
+
 }
 
 

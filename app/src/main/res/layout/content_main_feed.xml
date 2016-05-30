@@ -4,10 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/addSpinnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+
+
+    <Spinner
+        android:id="@+id/rating_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
         <ListView
             android:id="@+id/posts_list"
+
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="450dp" >
         </ListView>
 
 </LinearLayout>

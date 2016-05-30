@@ -2,6 +2,7 @@ package com.example.mick.rdtclient;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.widget.Spinner;
 
 /**
  * As of now, all this activity does is create and
@@ -27,6 +28,8 @@ public String Term1 = "Seinfeld" ;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragments_holder);
+
+
         addFragment();
     }
 

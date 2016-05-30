@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="rating_array">
+        <item>Hot</item>
+        <item>Best</item>
+        <item>Worst</item>
+        <item>New</item>
+
+    </string-array>
+
+
+
+</resources>
