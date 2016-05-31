@@ -33,7 +33,7 @@ public class PostsHolder {
 
 
     private final String URL_TEMPLATE=
-            "https://www.reddit.com/search.json?q=TERM1?sort=HOT";
+            "https://www.reddit.com/search.json?q=TERM1";
 
 
 
@@ -59,8 +59,8 @@ public class PostsHolder {
      */
     private void generateURL(){
         url=URL_TEMPLATE.replace("TERM1", subreddit);
-        url=URL_TEMPLATE.replace("HOT", score);
         url=url.replace("AFTER", after);
+
 
     }
 

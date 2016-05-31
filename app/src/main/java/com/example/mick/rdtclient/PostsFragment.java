@@ -69,12 +69,12 @@ public class PostsFragment extends Fragment {
                 , false);
         postsList = (ListView) v.findViewById(R.id.posts_list);
 
-         spinner = (Spinner) v.findViewById(R.id.rating_spinner);
+        spinner = (Spinner) v.findViewById(R.id.rating_spinner);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                
+
                 String item = parent.getItemAtPosition(position).toString();
                 Toast.makeText(getActivity() ,  " You hav selected" + item , Toast.LENGTH_LONG).show() ;
             }
@@ -220,6 +220,8 @@ public class PostsFragment extends Fragment {
     }
 
 }
+
+
 
 
 

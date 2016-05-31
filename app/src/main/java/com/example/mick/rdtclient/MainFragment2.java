@@ -19,7 +19,7 @@ public class MainFragment2 extends FragmentActivity {
 
 
     public String Term2 = "Ferrari";
-public String Term1 = "Seinfeld" ;
+    public String Term1 = "Seinfeld" ;
 
 
 
@@ -33,7 +33,7 @@ public String Term1 = "Seinfeld" ;
         addFragment();
     }
 
-    void addFragment(){
+     void addFragment(){
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragments_holder

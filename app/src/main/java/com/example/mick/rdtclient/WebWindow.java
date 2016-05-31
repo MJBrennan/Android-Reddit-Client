@@ -3,47 +3,57 @@ package com.example.mick.rdtclient;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+public class WebWindow extends Activity  {
 
 
-public class WebWindow extends Activity {
-
+    private WebView wv1;
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_window);
-
-        WebView  ourBrow = (WebView) findViewById(R.id.webView1);
-
-        ourBrow.getSettings().setJavaScriptEnabled(true);
-        ourBrow.getSettings().setLoadWithOverviewMode(true);
-        ourBrow.getSettings().setUseWideViewPort(true);
-
 
         Intent i = getIntent();
         // getting attached intent data
         String url = i.getStringExtra("product");
 
+        wv1=(WebView)findViewById(R.id.webView1);
+        wv1.setWebViewClient(new ourViewClient());
 
 
-        ourBrow.setWebViewClient(new ourViewClient());
-        try{
-
-
-
-            ourBrow.loadUrl("www.google.com");
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-
-
+                wv1.getSettings().setLoadsImagesAutomatically(true);
+                wv1.getSettings().setJavaScriptEnabled(true);
+                wv1.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
+                wv1.loadUrl(url);
 
     }
 
+
+
+
+
+
 }
+
+
+
+/****
+ Intent i = getIntent();
+ // getting attached intent data
+ String url = i.getStringExtra("product");
+ *****/

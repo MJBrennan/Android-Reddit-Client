@@ -8,8 +8,8 @@ public class ourViewClient extends WebViewClient {
 
     @Override
 
-    public boolean shouldOverrideUrlLoading(WebView v, String url){
-        v.loadUrl(url);
+    public boolean shouldOverrideUrlLoading(WebView view, String url) {
+        view.loadUrl(url);
         return true;
 
 
