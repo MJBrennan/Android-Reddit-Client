@@ -33,12 +33,7 @@ public class PostsHolder {
 
 
     private final String URL_TEMPLATE=
-            "https://www.reddit.com/search.json?q=TERM1";
-
-
-
-
-
+            "https://www.reddit.com/search.json?q=TERM1?";
 
     String subreddit;
     String score;
@@ -53,6 +48,14 @@ public class PostsHolder {
         generateURL();
     }
 
+ public void   RatingHolder(String rating){
+        score=rating;
+        after="";
+        changeURL();
+    }
+
+
+
     /**
      * Generates the actual URL from the template based on the
      * subreddit name and the 'after' property.
@@ -60,9 +63,13 @@ public class PostsHolder {
     private void generateURL(){
         url=URL_TEMPLATE.replace("TERM1", subreddit);
         url=url.replace("AFTER", after);
-
-
     }
+
+    private void changeURL(){
+        url=URL_TEMPLATE.replace("RATING", score);
+        url=url.replace("AFTER", after);
+    }
+
 
     /**
      * Returns a list of Post objects after fetching data from

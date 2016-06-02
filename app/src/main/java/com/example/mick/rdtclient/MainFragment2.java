@@ -2,14 +2,9 @@ package com.example.mick.rdtclient;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.Spinner;
 
-/**
- * As of now, all this activity does is create and
- * render a fragment.
- *
- * @author Hathy
- */
+
+
 
 
 
@@ -33,7 +28,10 @@ public class MainFragment2 extends FragmentActivity {
         addFragment();
     }
 
-     void addFragment(){
+
+
+  public void addFragment(){
+
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.fragments_holder

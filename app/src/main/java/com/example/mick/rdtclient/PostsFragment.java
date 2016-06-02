@@ -76,8 +76,20 @@ public class PostsFragment extends Fragment {
                                        int position, long id) {
 
                 String item = parent.getItemAtPosition(position).toString();
-                Toast.makeText(getActivity() ,  " You hav selected" + item , Toast.LENGTH_LONG).show() ;
+
+                if (item == "Best") {
+
+                    Toast.makeText(getActivity(), "You have selected best", Toast.LENGTH_LONG).show();
+
+
+                } else if (item == "Worst") {
+
+                } else if (item == "New") {
+
+                }
             }
+
+
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -137,6 +149,7 @@ public class PostsFragment extends Fragment {
             // thread. So create a new thread.
 
             new Thread() {
+
                 public void run() {
                     posts.addAll(postsHolder.fetchPosts());
 
@@ -214,10 +227,15 @@ public class PostsFragment extends Fragment {
                 startActivity(i);
 
 
+
+
             }
         });
 
+
     }
+
+
 
 }
 
