@@ -7,9 +7,8 @@ This project uses a number of ANdroid/Java objects to deliver content. They are 
 
 SharedPrefrences. Handles Persistence in the application.
 
-JSo
-
-
 ListView: Displaying content in Lists.
 
-WebView. Viewing web content
+WebView. Viewing web content.
+
+NavigationDrawer: Main user interface of the Application.
